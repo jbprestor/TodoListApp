@@ -4,7 +4,6 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import CreateTodo from "./components/create-todo";
 import EditTodo from "./components/edit-todo";
 import TodosList from "./components/todos-list";
-import DeleteTodo from "./components/delete-todo";
 import logo from "./logo.svg"
 
 

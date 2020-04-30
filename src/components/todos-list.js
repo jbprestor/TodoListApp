@@ -11,10 +11,7 @@ const Todo = props => (
             <button className="buttonDesign" style={{width:80, marginRight:20, borderRadius:5}} >
                 <Link to={"/edit/" + props.todo._id}>Edit</Link>
             </button>
-            <button className="buttonDesign" style={{width:80 , borderRadius:5}}>
-                <Link to={"/delete/" + props.todo._id}>Remove</Link>
-            </button>
-
+           
 
         </td>
     </tr>
