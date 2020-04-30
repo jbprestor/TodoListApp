@@ -85,7 +85,7 @@ export default class EditTodo extends Component {
     render() {
         return (
             <div>
-                <h3>Update Todo</h3>
+                <h3>Update Todo  <input onClick={this.onDelete} value="Delete This" className="btn btn-danger float-right " /></h3>
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group">
                         <label>Description: </label>
@@ -153,7 +153,7 @@ export default class EditTodo extends Component {
                         <br />
                         <div className="form-group">
                             <input type="submit" value="Update Todo" className="btn btn-primary" />
-                            <input onClick={this.onDelete} value="Delete This" className="btn btn-danger" />
+                            
                         </div>
                     </div>
                 </form>

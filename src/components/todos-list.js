@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 import axios from 'axios'
+import '../App.css';
 
 const Todo = props => (
     <tr>
@@ -8,10 +9,9 @@ const Todo = props => (
         <td className={props.todo.todo_completed ? 'completed' : ''}>{props.todo.todo_responsible}</td>
         <td className={props.todo.todo_completed ? 'completed' : ''}>{props.todo.todo_priority}</td>
         <td>
-            <button className="buttonDesign" style={{width:80, marginRight:20, borderRadius:5}} >
+            <button className="buttonDesign" style={{ width: 80, marginRight: 20, borderRadius: 5 }} >
                 <Link to={"/edit/" + props.todo._id}>Edit</Link>
             </button>
-           
 
         </td>
     </tr>
@@ -45,16 +45,22 @@ export default class TodosList extends Component {
     }
 
     TodosList() {
-        return this.state.todos.map(function (currentTodo, i) {
-            return <Todo todo={currentTodo} key={i}></Todo>
-        })
+        if (this.state.todos.length === 0) {
+            return "No notes has been added yet. Please Create new note ^_^";
+        }
+        else {
+            return this.state.todos.map(function (currentTodo, i) {
+                return <Todo todo={currentTodo} key={i}></Todo>
+            })
+        }
+
     }
 
     render() {
         return (
             <div>
-                <h3>Todo List</h3>
-                <table className="table table-striped table-dark" style={{ marginTop: 20 }}>
+                <h3>Sticky Notes</h3>
+                <table className="table table-striped" style={{ marginTop: 20 }}>
                     <thead >
                         <tr>
                             <th>Description</th>
